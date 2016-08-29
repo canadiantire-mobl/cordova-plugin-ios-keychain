@@ -49,6 +49,11 @@ var Keychain = {
 
 	getJson: function(success, error, key, touchIDMessage) {
 		var cb = function(v) {
+			
+			if (!v) {
+				success(v);
+			}
+			
 			v = v.replace(/\\\"/g, '"');
 
 			try {
